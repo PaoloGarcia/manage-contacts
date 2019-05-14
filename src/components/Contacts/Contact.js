@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 
 const Contact = ({ name, email, phone }) => {
     return (
-        <li>
-            <div>Name: {name}</div>
-            <div>Email: {email}</div>
-            <div>Phone: {phone}</div>
+        <li className="contact">
+            <h3 className="contact-title">{name}</h3>
+            <div className="contact-item">Email: {email}</div>
+            <div className="contact-item">Phone: {phone}</div>
         </li>
     );
 };

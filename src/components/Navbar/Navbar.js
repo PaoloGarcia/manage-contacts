@@ -2,14 +2,19 @@ import React from "react";
 import "./navbar.css";
 import PropTypes from "prop-types";
 
-const Navbar = ({ branding }) => {
+const Navbar = ({ branding, query, onChangeQueryHandler }) => {
     return (
         <nav className="navbar">
             <div className="brand-box">
                 {branding}
             </div>
             <div className="search-box">
-                <input type="text" placeholder="Search Contact" />
+                <input
+                    type="text"
+                    placeholder="Search Contact"
+                    value={query}
+                    onChange={onChangeQueryHandler}
+                />
             </div>
             <ul className="tabs">
                 <li>

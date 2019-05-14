@@ -5,7 +5,7 @@ import Navbar from "./Navbar/Navbar";
 import Contacts from "./Contacts/Contacts";
 
 function App() {
-    const [contacts, setContacts] = React.useState([
+    const [contacts] = React.useState([
         {
             id: "abc1",
             name: "Paolo Garcia",
@@ -28,18 +28,19 @@ function App() {
     const [query, setQuery] = React.useState("");
 
     const onChangeQueryHandler = e => {
-        setQuery(e.target.value);
+        setQuery(e.target.value); console.log(e.target.value);
     };
 
     return (
         <div className="App">
             <Navbar
                 branding="Contacts Manager"
+                query={query}
+                onChangeQueryHandler={onChangeQueryHandler}
             />
-            <div>
+            <div className="main-box">
                 <Contacts
                     contacts={contacts}
-                    query={query}
                 />
             </div>
         </div>
