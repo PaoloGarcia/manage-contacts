@@ -28,7 +28,7 @@ function App() {
     const [query, setQuery] = React.useState("");
 
     const onChangeQueryHandler = e => {
-        setQuery(e.target.value); console.log(e.target.value);
+        setQuery(e.target.value);
     };
 
     return (
