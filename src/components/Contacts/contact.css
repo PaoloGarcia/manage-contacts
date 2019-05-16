@@ -25,6 +25,14 @@
     cursor: pointer;
 }
 
+.fa-edit {
+    color: rgb(212, 121, 2);
+}
+
+.fa-user-times {
+    color: rgb(207, 2, 2);
+}
+
 .contact-title {
     font-size: 1rem;
     font-weight: 100;
