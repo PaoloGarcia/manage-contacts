@@ -18,11 +18,16 @@
 }
 
 .contact-options-box i {
-    margin-left: 30px;
+    margin-left: 35px;
 }
 
 .contact-header i:hover {
     cursor: pointer;
+}
+
+.fa-sort-down {
+    margin-left: 10px;
+    padding: 0 5px;
 }
 
 .fa-edit {
