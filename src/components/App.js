@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Navbar from "./Layout/Navbar/Navbar";
 import Contacts from "./Contacts/Contacts";
 import AddContact from "./Contacts/AddContact/AddContact";
@@ -38,20 +40,26 @@ function App() {
     }
 
     return (
-        <div className="App">
-            <Navbar
-                branding="Contacts Manager"
-                query={query}
-                onChangeQueryHandler={onChangeQueryHandler}
-            />
-            <AddContact />
-            <div className="main-box">
-                <Contacts
-                    contacts={contacts}
-                    onDeleteContactHandler={onDeleteContactHandler}
+        <Router>
+            <div className="App">
+                <Navbar
+                    branding="Contacts Manager"
+                    query={query}
+                    onChangeQueryHandler={onChangeQueryHandler}
                 />
+                <div className="main-box">
+                    <Switch>
+                        <Route exact path="/" render={() => {
+                            return <Contacts
+                                        contacts={contacts}
+                                        onDeleteContactHandler={onDeleteContactHandler}
+                                    />
+                        }}/>
+                        <Route exact path="/add" component={AddContact}/>
+                    </Switch>
+                </div>
             </div>
-        </div>
+        </Router>
     );
 }
 
