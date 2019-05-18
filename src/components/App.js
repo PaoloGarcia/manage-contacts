@@ -5,7 +5,7 @@ import Navbar from "./Navbar/Navbar";
 import Contacts from "./Contacts/Contacts";
 
 function App() {
-    const [contacts] = React.useState([
+    const [contacts, setContacts] = React.useState([
         {
             id: "abc1",
             name: "Paolo Garcia",
@@ -31,6 +31,11 @@ function App() {
         setQuery(e.target.value);
     };
 
+    const onDeleteContactHandler = id => {
+        const newContacts = contacts.filter(contact => contact.id !== id);
+        setContacts(newContacts);
+    }
+
     return (
         <div className="App">
             <Navbar
@@ -41,6 +46,7 @@ function App() {
             <div className="main-box">
                 <Contacts
                     contacts={contacts}
+                    onDeleteContactHandler={onDeleteContactHandler}
                 />
             </div>
         </div>
