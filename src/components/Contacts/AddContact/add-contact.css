@@ -1,5 +1,5 @@
 .add-contact {
-    border: 1px solid rgb(161, 122, 23);
+    border: 1px solid #999;
     border-radius: 5px;
     margin: 30px auto;
     padding: 10px 20px;
@@ -28,22 +28,16 @@
     border: 1px solid #aaa;
     border-radius: 5px;
     color: #aaa;
-    font-weight: 400;
+    font-weight: bold;
     margin: 15px 0;
     outline: none;
     padding: 10px 20px;
-    transition: 0.5s border-color, 0.5s box-shadow, 0.5s color;
+    transition: 0.3s border-color, 0.3s box-shadow, 0.3s color;
     width: 100%;
 }
 
 .btn-add:hover {
     border-color: rgb(161, 122, 23);
-    box-shadow: 0 1px 3px #333;
-    color: rgb(161, 122, 23);
-}
-
-.btn-add:active {
-    border-color: rgb(161, 122, 23);
-    box-shadow: 0 0.5px 1px #333;
+    box-shadow: 0 0.5px 3px #333;
     color: rgb(161, 122, 23);
 }
