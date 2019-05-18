@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Layout/Navbar/Navbar";
 import Contacts from "./Contacts/Contacts";
+import AddContact from "./Contacts/AddContact/AddContact";
 
 function App() {
     const [contacts, setContacts] = React.useState([
@@ -43,6 +44,7 @@ function App() {
                 query={query}
                 onChangeQueryHandler={onChangeQueryHandler}
             />
+            <AddContact />
             <div className="main-box">
                 <Contacts
                     contacts={contacts}

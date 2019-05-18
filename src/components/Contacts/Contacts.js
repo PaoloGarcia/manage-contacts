@@ -2,7 +2,7 @@ import React from "react";
 import "./contacts.css";
 import PropTypes from "prop-types";
 
-import Contact from "./Contact";
+import Contact from "./Contact/Contact";
 
 const Contacts = ({ contacts, onDeleteContactHandler }) => {
     const list = contacts.map(contact => {

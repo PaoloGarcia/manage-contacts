@@ -1,5 +1,6 @@
 .navbar {
     align-items: center;
+    box-shadow: 0 0 10px #333;
     background-color: rgb(46, 161, 90);
     display: flex;
     justify-content: space-around;
@@ -15,6 +16,7 @@
 }
 
 .search-box input {
+    outline-color: rgb(161, 122, 23);
     padding: 5px 10px;
     width: 100%;
 }

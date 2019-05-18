@@ -1,0 +1,42 @@
+.add-contact {
+    border: 1px solid rgb(161, 122, 23);
+    border-radius: 5px;
+    margin: 30px auto;
+    padding: 10px 20px;
+    width: 500px;
+}
+
+.add-contact-header {
+    padding: 15px 0;
+}
+
+.add-contact-body-item {
+    margin: 10px 0;
+}
+
+.add-contact-body-item input {
+    border: 1px solid #ccc;;
+    border-radius: 5px;
+    display: inline-block;
+    outline-color: rgb(161, 122, 23);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.btn-add {
+    background-color: inherit;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    color: #aaa;
+    font-weight: 400;
+    margin: 15px 0;
+    padding: 10px 20px;
+    transition: 0.5s border-color, 0.5s box-shadow, 0.5s color;
+    width: 100%;
+}
+
+.btn-add:hover {
+    border-color: rgb(161, 122, 23);
+    box-shadow: 0 1px 3px #333;
+    color: rgb(161, 122, 23);
+}
