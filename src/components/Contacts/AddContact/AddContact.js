@@ -8,7 +8,7 @@ const AddContact = () => {
                 Add Contact
             </div>
             <div className="add-contact-body">
-                <form>
+                <form onSubmit={e => e.preventDefault()}>
                     <div className="add-contact-body-item">
                         <input type="text" placeholder="Full Name" />
                     </div>
