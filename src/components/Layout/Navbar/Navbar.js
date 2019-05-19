@@ -2,6 +2,8 @@ import React from "react";
 import "./navbar.css";
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 const Navbar = ({ branding, query, onChangeQueryHandler }) => {
     return (
         <nav className="navbar">
@@ -18,10 +20,10 @@ const Navbar = ({ branding, query, onChangeQueryHandler }) => {
             </div>
             <ul className="tabs">
                 <li>
-                    <a href="#!">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="#!">Add</a>
+                    <Link to="/add">Add</Link>
                 </li>
             </ul>
         </nav>

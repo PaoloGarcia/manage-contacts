@@ -39,6 +39,10 @@ function App() {
         setContacts(newContacts);
     }
 
+    const onAddContactHandler = contact => {
+        setContacts([...contacts, contact]);
+    }
+
     return (
         <Router>
             <div className="App">
@@ -53,9 +57,15 @@ function App() {
                             return <Contacts
                                         contacts={contacts}
                                         onDeleteContactHandler={onDeleteContactHandler}
-                                    />
+                                    />;
                         }}/>
-                        <Route exact path="/add" component={AddContact}/>
+                        <Route exact path="/add" render={() => {
+                            return (
+                                <AddContact
+                                    onAddContactHandler={onAddContactHandler}
+                                />
+                            );
+                        }}/>
                     </Switch>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import "./contacts.css";
 import PropTypes from "prop-types";
 
 import Contact from "./Contact/Contact";
+import Title from "../Layout/Title/Title";
 
 const Contacts = ({ contacts, onDeleteContactHandler }) => {
     const list = contacts.map(contact => {
@@ -19,6 +20,10 @@ const Contacts = ({ contacts, onDeleteContactHandler }) => {
 
     return (
         <ul className="contacts">
+            <Title
+                colored="Contacts"
+                notColored="List"
+            />
             {list}
         </ul>
     );
