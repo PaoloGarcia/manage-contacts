@@ -37,13 +37,12 @@
 .tabs li {
     display: inline-block;
     flex-grow: 1;
-    padding: 0 10px;
 }
 
 .tabs li a {
     color: #eee;
     display: inline-block;
-    padding: 0 15px;
+    padding: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
 }

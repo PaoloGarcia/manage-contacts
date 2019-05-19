@@ -3,7 +3,7 @@ import "./add-contact.css";
 
 import Title from "../../Layout/Title/Title";
 
-const AddContact = ({onAddContactHandler}) => {
+const AddContact = ({onAddContactHandler, history}) => { 
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [phone, setPhone] = React.useState("");
@@ -11,6 +11,7 @@ const AddContact = ({onAddContactHandler}) => {
     const onSubmitHandler = e => {
         e.preventDefault();
         onAddContactHandler({name, email, phone});
+        history.push("/");
     }
 
     return (

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Layout/Navbar/Navbar";
 import Contacts from "./Contacts/Contacts";
 import AddContact from "./Contacts/AddContact/AddContact";
+import NotFound from "./NotFound/NotFound";
 
 function App() {
     const [contacts, setContacts] = React.useState([
@@ -40,7 +41,7 @@ function App() {
     }
 
     const onAddContactHandler = contact => {
-        setContacts([...contacts, contact]);
+        setContacts([contact, ...contacts]);
     }
 
     return (
@@ -59,13 +60,15 @@ function App() {
                                         onDeleteContactHandler={onDeleteContactHandler}
                                     />;
                         }}/>
-                        <Route exact path="/add" render={() => {
+                        <Route exact path="/add" render={props => {
                             return (
                                 <AddContact
                                     onAddContactHandler={onAddContactHandler}
+                                    history={props.history}
                                 />
                             );
                         }}/>
+                        <Route component={NotFound}/>
                     </Switch>
                 </div>
             </div>
