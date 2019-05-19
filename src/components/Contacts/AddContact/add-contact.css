@@ -42,6 +42,10 @@
 
 .btn-add:hover {
     border-color: rgb(161, 122, 23);
-    box-shadow: 0 0.5px 3px #333;
+    box-shadow: 0 3px 6px #666;
     color: rgb(161, 122, 23);
+}
+
+.btn-add:active {
+    box-shadow: 0 1px 4px #666;
 }

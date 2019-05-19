@@ -3,10 +3,10 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Navbar from "./Layout/Navbar/Navbar";
-import Contacts from "./Contacts/Contacts";
-import AddContact from "./Contacts/AddContact/AddContact";
-import NotFound from "./NotFound/NotFound";
+import Navbar from "./components/Layout/Navbar/Navbar";
+import Contacts from "./components/Contacts/Contacts";
+import AddContact from "./components/Contacts/AddContact/AddContact";
+import NotFound from "./components//NotFound/NotFound";
 
 function App() {
     const [contacts, setContacts] = React.useState([

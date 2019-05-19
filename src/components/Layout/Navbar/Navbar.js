@@ -20,10 +20,10 @@ const Navbar = ({ branding, query, onChangeQueryHandler }) => {
             </div>
             <ul className="tabs">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/"><i className="fas fa-home"></i> Home</Link>
                 </li>
                 <li>
-                    <Link to="/add">Add</Link>
+                    <Link to="/add"><i className="fas fa-plus"></i> Add</Link>
                 </li>
             </ul>
         </nav>
