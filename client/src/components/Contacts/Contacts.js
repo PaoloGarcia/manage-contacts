@@ -6,6 +6,8 @@ import Contact from "./Contact/Contact";
 import Title from "../Layout/Title/Title";
 
 const Contacts = ({ contacts, onDeleteContactHandler }) => {
+    if (contacts.length === 0) return <div>waiting...</div>
+
     const list = contacts.map(contact => {
         return (
             <Contact

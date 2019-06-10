@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { getContacts } from "./actions";
 
 // components
 import Navbar from "./components/Layout/Navbar/Navbar";
@@ -9,7 +12,7 @@ import Contacts from "./components/Contacts/Contacts";
 import AddContact from "./components/Contacts/AddContact/AddContact";
 import NotFound from "./components//NotFound/NotFound";
 
-function App() {
+function App(props) {
     const [contacts, setContacts] = React.useState([
         {
             id: "abc1",
@@ -31,6 +34,12 @@ function App() {
         },
     ]);
     const [query, setQuery] = React.useState("");
+
+    // const { dispatch, contacts, } = props;
+
+    // React.useEffect(() => {
+    //     dispatch(getContacts());
+    // }, []);
 
     const onChangeQueryHandler = e => setQuery(e.target.value);
 
@@ -76,4 +85,10 @@ function App() {
     );
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        contacts: state.contacts.contacts,
+    }
+}
+
+export default connect(mapStateToProps)(App);

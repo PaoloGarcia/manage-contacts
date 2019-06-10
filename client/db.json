@@ -1,0 +1,22 @@
+{
+    "contacts": [
+        {
+            "id": "abc1",
+            "name": "Paolo Garcia",
+            "email": "paogar@gmail.com",
+            "phone": "000-000-0000"
+        },
+        {
+            "id": "abc2",
+            "name": "John Doe",
+            "email": "johdoe@gmail.com",
+            "phone": "111-111-1111"
+        },
+        {
+            "id": "abc3",
+            "name": "Ann Olegovna",
+            "email": "annole@gmail.com",
+            "phone": "222-222-2222"
+        }
+    ]
+}
