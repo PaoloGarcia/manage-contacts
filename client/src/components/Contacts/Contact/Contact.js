@@ -17,10 +17,7 @@ const Contact = ({ name, email, phone, onDeleteContactHandler }) => {
                 </div>
                 <div className="contact-options-box">
                     <i className="fas fa-edit"></i>
-                    <i
-                        className="fas fa-user-times"
-                        onClick={onDeleteContactHandler}
-                    ></i>
+                    <i className="fas fa-user-times" onClick={onDeleteContactHandler}></i>
                 </div>
             </div>
             {

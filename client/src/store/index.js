@@ -1,17 +1,23 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
+import { createEpicMiddleware } from "redux-observable";
 
 import rootReducer from "../reducers";
+import { rootEpic } from "../epics";
 
-const initialState = {};
-const middlewares = [thunk];
+const epic = createEpicMiddleware();
+
+// const initialState = {};
+const middlewares = [epic,];
 
 const store = createStore(
     rootReducer,
-    initialState,
+    // initialState,
     compose(
-        applyMiddleware(...middlewares)
+        applyMiddleware(...middlewares),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     ),
 );
+
+epic.run(rootEpic);
 
 export default store;

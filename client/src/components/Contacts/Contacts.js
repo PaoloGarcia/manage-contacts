@@ -20,10 +20,7 @@ const Contacts = ({ contacts, onDeleteContactHandler }) => {
 
     return (
         <ul className="contacts">
-            <Title
-                colored="Contacts"
-                notColored="List"
-            />
+            <Title colored="Contacts" notColored="List" />
             {list}
         </ul>
     );

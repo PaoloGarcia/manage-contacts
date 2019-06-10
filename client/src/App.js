@@ -3,6 +3,7 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+// components
 import Navbar from "./components/Layout/Navbar/Navbar";
 import Contacts from "./components/Contacts/Contacts";
 import AddContact from "./components/Contacts/AddContact/AddContact";
@@ -31,9 +32,7 @@ function App() {
     ]);
     const [query, setQuery] = React.useState("");
 
-    const onChangeQueryHandler = e => {
-        setQuery(e.target.value);
-    };
+    const onChangeQueryHandler = e => setQuery(e.target.value);
 
     const onDeleteContactHandler = id => {
         const newContacts = contacts.filter(contact => contact.id !== id);

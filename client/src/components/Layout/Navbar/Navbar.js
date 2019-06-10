@@ -19,12 +19,8 @@ const Navbar = ({ branding, query, onChangeQueryHandler }) => {
                 />
             </div>
             <ul className="tabs">
-                <li>
-                    <Link to="/"><i className="fas fa-home"></i> Home</Link>
-                </li>
-                <li>
-                    <Link to="/add"><i className="fas fa-plus"></i> Add</Link>
-                </li>
+                <li><Link to="/"><i className="fas fa-home"></i> Home</Link></li>
+                <li><Link to="/add"><i className="fas fa-plus"></i> Add</Link></li>
             </ul>
         </nav>
     );
@@ -32,6 +28,8 @@ const Navbar = ({ branding, query, onChangeQueryHandler }) => {
 
 Navbar.propTypes = {
     branding: PropTypes.string.isRequired,
+    query: PropTypes.string.isRequired,
+    onChangeQueryHandler: PropTypes.func.isRequired,
 };
 
 export default Navbar;
