@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { getContacts } from "./actions";
+// import { getContacts } from "./actions";
 
 // components
 import Navbar from "./components/Layout/Navbar/Navbar";
