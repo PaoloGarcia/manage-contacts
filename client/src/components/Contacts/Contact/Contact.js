@@ -1,5 +1,5 @@
 import React from "react";
-import "./contact.css";
+import "./contact.scss";
 import PropTypes from "prop-types";
 
 const Contact = ({ name, email, phone, onDeleteContactHandler }) => {

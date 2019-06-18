@@ -1,5 +1,5 @@
 import React from "react";
-import "./add-contact.css";
+import "./add-contact.scss";
 import PropTypes from "prop-types";
 
 import Title from "../../Layout/Title/Title";

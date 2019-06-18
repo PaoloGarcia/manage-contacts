@@ -1,8 +1,8 @@
 import React from "react";
-import "./title.css";
+import "./title.scss";
 import PropTypes from "prop-types";
 
-const Title = ({colored, notColored}) => {
+const Title = ({ colored, notColored }) => {
     return (
         <h1 className="title">
             <span className="colored-side">{colored}</span>{" "}

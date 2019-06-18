@@ -1,4 +1,3 @@
-
 import {
     GET_CONTACTS,
     GET_CONTACTS_SUCCESS,

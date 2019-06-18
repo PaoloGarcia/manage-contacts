@@ -1,5 +1,5 @@
 import React from "react";
-import "./contacts.css";
+import "./contacts.scss";
 import PropTypes from "prop-types";
 
 import Contact from "./Contact/Contact";

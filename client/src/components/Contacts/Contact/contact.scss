@@ -1,0 +1,62 @@
+.contact {
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px 20px;
+
+    .contact-header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        i:hover {
+            cursor: pointer;
+        }
+
+        .contact-title {
+            font-size: 1rem;
+            font-weight: 100;
+
+            .fa-sort-down {
+                margin-left: 10px;
+                padding: 0 5px;
+            }
+        }
+
+        .contact-options-box {
+            i {
+                margin-left: 35px;
+            }
+
+            .fa-edit {
+                color: rgb(212, 121, 2);
+            }
+            
+            .fa-user-times {
+                color: rgb(207, 2, 2);
+            }
+        }
+    }
+    
+    .contact-items-box {
+        margin-top: 10px;
+
+        .contact-item {
+            border: 1px solid #999;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+
+            &:first-child {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            &:last-child {
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+
+        
+    }
+}
