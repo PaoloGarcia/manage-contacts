@@ -13,6 +13,10 @@ import {
     EDIT_CONTACT_FAILURE,
 } from "./types";
 
+/**
+ * GET CONTACT
+ ********************************************************************/
+
 export const getContacts = () => {
     return {
         type: GET_CONTACTS,
@@ -33,16 +37,20 @@ export const getContactsFailure = message => {
     };
 };
 
+/**
+ * ADD CONTACT
+ ********************************************************************/
+
 export const addContact = () => {
     return {
         type: ADD_CONTACT,
     };
 };
 
-export const addContactSuccess = user => {
+export const addContactSuccess = contact => {
     return {
         type: ADD_CONTACT_SUCCESS,
-        payload: user,
+        payload: contact,
     };
 };
 
@@ -52,6 +60,10 @@ export const addContactFailure = message => {
         payload: message,
     };
 };
+
+/**
+ * DELETE CONTACT
+ ********************************************************************/
 
 export const deleteContact = () => {
     return {
@@ -72,6 +84,10 @@ export const deleteContactFailure = message => {
         payload: message,
     };
 };
+
+/**
+ * EDIT CONTACT
+ ********************************************************************/
 
 export const editContact = () => {
     return {

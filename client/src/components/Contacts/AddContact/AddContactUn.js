@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "./add-contact.scss";
 import PropTypes from "prop-types";
 
 import Title from "../../Layout/Title/Title";
 
-const AddContact = ({ onAddContactHandler, history }) => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+const AddContact = ({ onAddContactHandler, history, }) => {
+
+    const nameRef = useRef("");
+    const emailRef = useRef("");
+    const phoneRef = useRef("");
 
     const onSubmitHandler = e => {
         e.preventDefault();
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const phone = phoneRef.current.value;
 
         if (name === "") {
             console.log("empty name");
@@ -41,8 +45,7 @@ const AddContact = ({ onAddContactHandler, history }) => {
                                 type="text"
                                 name="name"
                                 placeholder="Full Name"
-                                value={name}
-                                onChange={e => setName(e.target.value)}
+                                ref={nameRef}
                             />
                         </div>
                         <div className="add-contact-body-item">
@@ -50,8 +53,7 @@ const AddContact = ({ onAddContactHandler, history }) => {
                                 type="email"
                                 name="email"
                                 placeholder="Email"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
+                                ref={emailRef}
                             />
                         </div>
                         <div className="add-contact-body-item">
@@ -59,8 +61,7 @@ const AddContact = ({ onAddContactHandler, history }) => {
                                 type="text"
                                 name="phone"
                                 placeholder="Phone Number"
-                                value={phone}
-                                onChange={e => setPhone(e.target.value)}
+                                ref={phoneRef}
                             />
                         </div>
                         <button className="btn-add" type="submit">Add Contact</button>
