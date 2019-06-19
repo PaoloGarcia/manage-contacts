@@ -9,4 +9,14 @@
         padding: 10px 20px;
         width: 100%;
     }
+
+    .invalid-input {
+        border: 1px solid red;
+    }
+
+    .invalid {
+        color: red;
+        font-size: 13px;
+        height: 15px;
+    }
 }

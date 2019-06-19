@@ -10,22 +10,33 @@ const AddContact = ({ onAddContactHandler, history }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [errors, setErrors] = useState({});
 
     const onSubmitHandler = e => {
         e.preventDefault();
 
         if (name === "") {
-            console.log("empty name");
+            setErrors({ name: "Name field is required" });
             return;
-        } else if (email === "") {
-            console.log("empty email");
+        }
+        if (email === "") {
+            setErrors({ email: "Email field is required" });
             return;
-        } else if (phone === "") {
-            console.log("empty phone");
+        }
+        if (phone === "") {
+            setErrors({ phone: "Phone field is required" });
             return;
         }
 
         onAddContactHandler({ name, email, phone });
+
+        // clear fields
+        setName("");
+        setEmail("");
+        setPhone("");
+        setErrors({});
+
+        // redirect to home page
         history.push("/");
     }
 
@@ -38,14 +49,29 @@ const AddContact = ({ onAddContactHandler, history }) => {
             <div className="add-contact-box">
                 <div className="add-contact-body">
                     <form onSubmit={onSubmitHandler}>
-                        <InputField type="text" name="name" placeholder="Full Name"
-                            value={name} onChange={e => setName(e.target.value)}
+                        <InputField
+                            type="text"
+                            name="name"
+                            placeholder="Full Name"
+                            value={name}
+                            onChange={e => setName(e.target.value)}
+                            error={errors.name}
                         />
-                        <InputField type="text" name="email" placeholder="Email"
-                            value={email} onChange={e => setEmail(e.target.value)}
+                        <InputField
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            error={errors.email}
                         />
-                        <InputField type="text" name="phone" placeholder="Phone Number"
-                            value={phone} onChange={e => setPhone(e.target.value)}
+                        <InputField
+                            type="text"
+                            name="phone"
+                            placeholder="Phone Number"
+                            value={phone}
+                            onChange={e => setPhone(e.target.value)}
+                            error={errors.phone}
                         />
                         <button className="btn-add" type="submit">Add Contact</button>
                     </form>

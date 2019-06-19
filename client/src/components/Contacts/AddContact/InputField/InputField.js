@@ -2,16 +2,18 @@ import React from "react";
 import "./input-field.scss";
 import PropTypes from "prop-types";
 
-const InputField = ({ type, name, placeholder, value, onChange }) => {
+const InputField = ({ type, name, placeholder, value, onChange, error }) => {
     return (
         <div className="input-field">
             <input
+                className={error ? "invalid-input" : null}
                 type={type}
                 name={name}
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
             />
+            <div className="invalid">{error}</div>
         </div>
     );
 };
@@ -25,6 +27,7 @@ InputField.propTypes = {
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
+    error: PropTypes.string,
     onChange: PropTypes.func.isRequired,
 };
 
