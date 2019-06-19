@@ -9,8 +9,7 @@ import { connect } from "react-redux";
 // components
 import Navbar from "./components/Layout/Navbar/Navbar";
 import Contacts from "./components/Contacts/Contacts";
-// import AddContact from "./components/Contacts/AddContact/AddContact";
-import AddContact from "./components/Contacts/AddContact/AddContactUn";
+import AddContact from "./components/Contacts/AddContact/AddContact";
 import NotFound from "./components//NotFound/NotFound";
 
 function App(props) {
