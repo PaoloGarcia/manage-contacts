@@ -1,13 +1,8 @@
 import { combineEpics } from "redux-observable";
-import { Observable } from "rxjs";
-import "rxjs/add/operator/switchMap";
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/catch";
-import "rxjs/add/observable/of"
-import { ajax } from "rxjs/observable/dom/ajax";
+import { mergeMap, ofType } from "rxjs/operators";
 
 import {
-    GET_CONTACTS,
+    GET_CONTACTS, GET_CONTACTS_SUCCESS, GET_CONTACTS_FAILURE,
 } from "../actions/types";
 
 import {
@@ -15,18 +10,27 @@ import {
     getContactsFailure,
 } from "../actions";
 
-const getContactsEpic = (action$) => {
+function getContactsEpic(action$, state$) {
     return action$
-        .ofType(GET_CONTACTS)
-        .switchMap(() => {
-            return ajax
-                .getJSON("http://localhost:5000/contacts")
-                .map(data => data)
-        })
-        .map(contacts => {
-            return getContactsSuccess(contacts);
-        })
-        .catch(error => Observable.of(getContactsFailure(error.message)));
+        .pipe(
+            // filter(action => action.type === GET_CONTACTS),
+            ofType(GET_CONTACTS),
+            mergeMap(async action => {
+                try {
+                    const res = await fetch("http://localhost:5000/contacts");
+                    const contacts = await res.json();
+                    return {
+                        type: GET_CONTACTS_SUCCESS,
+                        payload: contacts,
+                    };
+                } catch (err) {
+                    return {
+                        type: GET_CONTACTS_FAILURE,
+                        payload: err.message,
+                    };
+                }
+            })
+        );
 }
 
 export const rootEpic = combineEpics(getContactsEpic);
