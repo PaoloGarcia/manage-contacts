@@ -2,14 +2,14 @@ import React from "react";
 import "./title.scss";
 import PropTypes from "prop-types";
 
-const Title = ({ colored, notColored }) => {
+function Title({ colored, notColored }) {
     return (
         <h1 className="title">
             <span className="colored-side">{colored}</span>{" "}
             {notColored}
         </h1>
     );
-};
+}
 
 Title.propTypes = {
     colored: PropTypes.string.isRequired,

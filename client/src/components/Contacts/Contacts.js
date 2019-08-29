@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Contact from "./Contact/Contact";
 import Title from "../Layout/Title/Title";
 
-const Contacts = ({ contacts, onDeleteContactHandler }) => {
+function Contacts({ contacts, onDeleteContactHandler }) {
     if (contacts.length === 0) return <div>waiting...</div>
 
     const list = contacts.map(contact => {
@@ -26,7 +26,7 @@ const Contacts = ({ contacts, onDeleteContactHandler }) => {
             {list}
         </ul>
     );
-};
+}
 
 Contacts.propTypes = {
     contacts: PropTypes.array.isRequired,

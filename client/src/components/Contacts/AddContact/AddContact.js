@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import Title from "../../Layout/Title/Title";
 import InputField from "./InputField/InputField";
 
-const AddContact = ({ onAddContactHandler, history }) => {
+function AddContact({ onAddContactHandler, history }) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -79,7 +79,7 @@ const AddContact = ({ onAddContactHandler, history }) => {
             </div>
         </div>
     );
-};
+}
 
 AddContact.propTypes = {
     onAddContactHandler: PropTypes.func.isRequired,

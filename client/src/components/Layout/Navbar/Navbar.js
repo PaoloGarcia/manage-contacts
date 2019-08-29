@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
 
-const Navbar = ({ branding, query, onChangeQueryHandler }) => {
+function Navbar({ branding, query, onChangeQueryHandler }) {
     return (
         <nav className="navbar">
             <div className="brand-box">
@@ -24,7 +24,7 @@ const Navbar = ({ branding, query, onChangeQueryHandler }) => {
             </ul>
         </nav>
     );
-};
+}
 
 Navbar.propTypes = {
     branding: PropTypes.string.isRequired,

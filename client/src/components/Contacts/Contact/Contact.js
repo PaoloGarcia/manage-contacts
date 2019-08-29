@@ -2,7 +2,7 @@ import React from "react";
 import "./contact.scss";
 import PropTypes from "prop-types";
 
-const Contact = ({ name, email, phone, onDeleteContactHandler }) => {
+function Contact({ name, email, phone, onDeleteContactHandler }) {
     const [showContact, setShowContact] = React.useState(false);
 
     return (
@@ -32,7 +32,7 @@ const Contact = ({ name, email, phone, onDeleteContactHandler }) => {
             }
         </li>
     );
-};
+}
 
 Contact.propTypes = {
     name: PropTypes.string.isRequired,

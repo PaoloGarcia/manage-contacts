@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Title from "../../Layout/Title/Title";
 
-const AddContact = ({ onAddContactHandler, history, }) => {
+function AddContact({ onAddContactHandler, history, }) {
 
     const nameRef = useRef("");
     const emailRef = useRef("");
@@ -70,7 +70,7 @@ const AddContact = ({ onAddContactHandler, history, }) => {
             </div>
         </div>
     );
-};
+}
 
 AddContact.propTypes = {
     onAddContactHandler: PropTypes.func.isRequired,

@@ -3,12 +3,12 @@ import "./not-found.scss";
 
 import Title from "../Layout/Title/Title";
 
-const NotFound = () => {
+function NotFound() {
     return (
         <div className="not-found">
             <Title colored="404" notColored="Page Not Found" />
         </div>
     );
-};
+}
 
 export default NotFound;

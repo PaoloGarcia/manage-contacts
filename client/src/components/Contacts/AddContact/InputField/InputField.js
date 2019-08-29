@@ -2,7 +2,7 @@ import React from "react";
 import "./input-field.scss";
 import PropTypes from "prop-types";
 
-const InputField = ({ type, name, placeholder, value, onChange, error }) => {
+function InputField({ type, name, placeholder, value, onChange, error }) {
     return (
         <div className="input-field">
             <input
@@ -16,7 +16,7 @@ const InputField = ({ type, name, placeholder, value, onChange, error }) => {
             <div className="invalid">{error}</div>
         </div>
     );
-};
+}
 
 InputField.defaultProps = {
     type: "text",
