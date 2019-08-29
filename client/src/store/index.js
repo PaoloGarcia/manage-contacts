@@ -4,10 +4,11 @@ import { createEpicMiddleware } from "redux-observable";
 import rootReducer from "../reducers";
 import { rootEpic } from "../epics";
 
-const epic = createEpicMiddleware();
+const epicMid = createEpicMiddleware();
 
 // const initialState = {};
-const middlewares = [epic,];
+
+const middlewares = [epicMid,];
 
 const store = createStore(
     rootReducer,
@@ -18,6 +19,6 @@ const store = createStore(
     ),
 );
 
-epic.run(rootEpic);
+epicMid.run(rootEpic);
 
 export default store;
