@@ -2,7 +2,8 @@ import { combineEpics } from "redux-observable";
 import { mergeMap, filter } from "rxjs/operators";
 
 import {
-    GET_CONTACTS, GET_CONTACTS_SUCCESS, GET_CONTACTS_FAILURE, ADD_CONTACT, ADD_CONTACT_SUCCESS
+    GET_CONTACTS, GET_CONTACTS_SUCCESS, GET_CONTACTS_FAILURE, 
+    ADD_CONTACT, ADD_CONTACT_SUCCESS, ADD_CONTACT_FAILURE,
 } from "../actions/types";
 
 function getContactsEpic(action$) {
@@ -48,7 +49,7 @@ function addContactEpic(action$) {
                     };
                 } catch (err) {
                     return {
-                        type: ADD_CONTACTS_FAILURE,
+                        type: ADD_CONTACT_FAILURE,
                         payload: err.message,
                     };
                 }
