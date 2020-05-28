@@ -1,6 +1,6 @@
 import React from "react";
-import "./contacts.scss";
 import PropTypes from "prop-types";
+import "./contacts.scss";
 
 import Contact from "./Contact/Contact";
 import Title from "../Layout/Title/Title";

@@ -1,7 +1,6 @@
 import React from "react";
-import "./not-found.scss";
-
 import Title from "../Layout/Title/Title";
+import "./not-found.scss";
 
 function NotFound() {
     return (

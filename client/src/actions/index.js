@@ -7,43 +7,31 @@ import {
 
 /**
  * GET CONTACT
- ********************************************************************/
-
-export const getContacts = () => {
-    return {
-        type: GET_CONTACTS,
-    };
-};
+ ***************************************/
+export const getContacts = () => ({
+    type: GET_CONTACTS,
+});
 
 /**
  * ADD CONTACT
- ********************************************************************/
-
-export const addContact = (contact) => {
-    return {
-        type: ADD_CONTACT,
-        payload: contact,
-    };
-};
+ ***************************************/
+export const addContact = (contact) => ({
+    type: ADD_CONTACT,
+    payload: contact,
+});
 
 /**
  * DELETE CONTACT
- ********************************************************************/
-
-export const deleteContact = (id) => {
-    return {
-        type: DELETE_CONTACTS,
-        payload: id,
-    };
-};
+ ***************************************/
+export const deleteContact = (id) => ({
+    type: DELETE_CONTACTS,
+    payload: id,
+});
 
 /**
  * EDIT CONTACT
- ********************************************************************/
-
-export const editContact = (id) => {
-    return {
-        type: EDIT_CONTACT,
-        payload: id,
-    };
-};
+ ***************************************/
+export const editContact = (id) => ({
+    type: EDIT_CONTACT,
+    payload: id,
+});

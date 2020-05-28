@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import Navbar from "./components/Layout/Navbar/Navbar";
 import Contacts from "./components/Contacts/Contacts";
 import AddContact from "./components/Contacts/AddContact/AddContact";
-import NotFound from "./components//NotFound/NotFound";
+import NotFound from "./components/NotFound/NotFound";
 
 function App(props) {
     const [contacts, setContacts] = React.useState([
@@ -83,10 +83,8 @@ function App(props) {
     );
 }
 
-const mapStateToProps = state => {
-    return {
+export default connect(
+    (state) => ({
         contacts: state.contacts.contacts,
-    }
-}
-
-export default connect(mapStateToProps)(App);
+    })
+)(App);

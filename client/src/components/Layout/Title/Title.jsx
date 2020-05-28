@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./title.scss";
-import PropTypes from "prop-types";
 
 function Title({ colored, notColored }) {
     return (

@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./contact.scss";
-import PropTypes from "prop-types";
 
 function Contact({ name, email, phone, onDeleteContactHandler }) {
     const [showContact, setShowContact] = React.useState(false);

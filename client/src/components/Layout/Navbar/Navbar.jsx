@@ -1,8 +1,7 @@
 import React from "react";
-import "./navbar.scss";
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
+import "./navbar.scss";
 
 function Navbar({ branding, query, onChangeQueryHandler }) {
     return (

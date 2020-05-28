@@ -1,11 +1,9 @@
-import React, { useRef } from "react";
-import "./add-contact.scss";
 import PropTypes from "prop-types";
-
+import React, { useRef } from "react";
 import Title from "../../Layout/Title/Title";
+import "./add-contact.scss";
 
 function AddContact({ onAddContactHandler, history, }) {
-
     const nameRef = useRef("");
     const emailRef = useRef("");
     const phoneRef = useRef("");
