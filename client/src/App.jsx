@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -12,8 +12,8 @@ import Contacts from "./components/Contacts/Contacts";
 import AddContact from "./components/Contacts/AddContact/AddContact";
 import NotFound from "./components/NotFound/NotFound";
 
-function App(props) {
-    const [contacts, setContacts] = React.useState([
+function App() {
+    const [contacts, setContacts] = useState([
         {
             id: "abc1",
             name: "Paolo Garcia",
@@ -33,7 +33,7 @@ function App(props) {
             phone: "222-222-2222"
         },
     ]);
-    const [query, setQuery] = React.useState("");
+    const [query, setQuery] = useState("");
 
     // const { dispatch, contacts, } = props;
 
@@ -46,7 +46,7 @@ function App(props) {
     const onDeleteContactHandler = id => {
         const newContacts = contacts.filter(contact => contact.id !== id);
         setContacts(newContacts);
-    }
+    };
 
     const onAddContactHandler = contact => setContacts([contact, ...contacts]);
 
@@ -58,7 +58,6 @@ function App(props) {
                     query={query}
                     onChangeQueryHandler={onChangeQueryHandler}
                 />
-
                 <div className="main-box">
                     <Switch>
                         <Route exact path="/" render={() => {
