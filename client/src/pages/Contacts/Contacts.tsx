@@ -1,7 +1,7 @@
 import { IContact } from "../../types"
 import { ChangeEvent } from "react"
-import Contact from "./Contact/Contact"
-import Title from "../Title/Title"
+import Contact from "../../components/Contact/Contact"
+import Title from "../../components/Title/Title"
 import "./contacts.scss"
 
 interface ContactsProps {
@@ -17,8 +17,8 @@ function Contacts({
     query,
     onChangeQueryHandler
 }: ContactsProps): JSX.Element {
-    const list = contacts.map(contact => {
-        return (
+    const list = contacts.map(
+        (contact: IContact): JSX.Element => (
             <Contact
                 key={contact.id}
                 name={contact.name}
@@ -29,7 +29,7 @@ function Contacts({
                 }
             />
         )
-    })
+    )
 
     return (
         <ul className="contacts">

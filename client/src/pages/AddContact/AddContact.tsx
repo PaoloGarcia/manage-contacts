@@ -1,8 +1,8 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { useHistory } from "react-router-dom"
-import { IContact, IValidationError } from "../../../types";
-import Title from "../../Title/Title";
-import InputField from "./InputField/InputField";
+import { IContact, IValidationError } from "../../types";
+import Title from "../../components/Title/Title";
+import InputField from "../../components/InputField/InputField";
 import "./add-contact.scss";
 
 interface AddContactProps {
@@ -16,7 +16,7 @@ function AddContact({ onAddContactHandler }: AddContactProps): JSX.Element {
     const [phone, setPhone] = useState<string>("");
     const [errors, setErrors] = useState<IValidationError>({});
 
-    const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+    const onSubmitHandler = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         if (name === "") {
             setErrors({ name: "Name field is required" });
