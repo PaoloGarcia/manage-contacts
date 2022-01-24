@@ -1,20 +1,23 @@
-import React, { useState } from "react";
-import "./add-contact.scss";
-import PropTypes from "prop-types";
-
-// components
-import Title from "../../Layout/Title/Title";
+import { useState, FormEvent, ChangeEvent } from "react";
+import { useHistory } from "react-router-dom"
+import { IContact, IValidationError } from "../../../types";
+import Title from "../../Title/Title";
 import InputField from "./InputField/InputField";
+import "./add-contact.scss";
 
-function AddContact({ onAddContactHandler, history }) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [errors, setErrors] = useState({});
+interface AddContactProps {
+    onAddContactHandler: (contact: IContact) => void
+}
 
-    const onSubmitHandler = e => {
+function AddContact({ onAddContactHandler }: AddContactProps): JSX.Element {
+    const history = useHistory()
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+    const [errors, setErrors] = useState<IValidationError>({});
+
+    const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         if (name === "") {
             setErrors({ name: "Name field is required" });
             return;
@@ -27,15 +30,12 @@ function AddContact({ onAddContactHandler, history }) {
             setErrors({ phone: "Phone field is required" });
             return;
         }
-
-        onAddContactHandler({ name, email, phone });
-
+        onAddContactHandler({ id: "", name, email, phone });
         // clear fields
         setName("");
         setEmail("");
         setPhone("");
         setErrors({});
-
         // redirect to home page
         history.push("/");
     }
@@ -54,24 +54,32 @@ function AddContact({ onAddContactHandler, history }) {
                             name="name"
                             placeholder="Full Name"
                             value={name}
-                            onChange={e => setName(e.target.value)}
-                            error={errors.name}
+                            onChange={
+                                (e: ChangeEvent<HTMLInputElement>): void => {
+                                    setName(e.target.value)
+                                }
+                            }
+                            error={errors.name ?? ""}
                         />
                         <InputField
                             type="text"
                             name="email"
                             placeholder="Email"
                             value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            error={errors.email}
+                            onChange={(e: ChangeEvent<HTMLInputElement>): void => {
+                                setEmail(e.target.value)
+                            }}
+                            error={errors.email ?? ""}
                         />
                         <InputField
                             type="text"
                             name="phone"
                             placeholder="Phone Number"
                             value={phone}
-                            onChange={e => setPhone(e.target.value)}
-                            error={errors.phone}
+                            onChange={(e: ChangeEvent<HTMLInputElement>): void => {
+                                setPhone(e.target.value)
+                            }}
+                            error={errors.phone ?? ""}
                         />
                         <button className="btn-add" type="submit">Add Contact</button>
                     </form>
@@ -80,10 +88,5 @@ function AddContact({ onAddContactHandler, history }) {
         </div>
     );
 }
-
-AddContact.propTypes = {
-    onAddContactHandler: PropTypes.func.isRequired,
-    history: PropTypes.object.isRequired,
-};
 
 export default AddContact;

@@ -3,24 +3,11 @@
     box-shadow: 0 0 10px #333;
     background-color: rgb(46, 161, 90);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 6px;
 
     .brand-box {
         color: #eee;
-    }
-    
-    .search-box {
-        text-align: center;
-        width: 240px;
-
-        input {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            display: inline-block;
-            outline-color: rgb(161, 122, 23);
-            padding: 5px 10px;
-            width: 100%;
-        }
     }
     
     .tabs {
