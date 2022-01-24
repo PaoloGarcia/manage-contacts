@@ -1,9 +1,15 @@
-import PropTypes from "prop-types";
-import React from "react";
-import "./contact.scss";
+import { useState } from "react"
+import "./contact.scss"
 
-function Contact({ name, email, phone, onDeleteContactHandler }) {
-    const [showContact, setShowContact] = React.useState(false);
+interface Props {
+    name: string,
+    email: string,
+    phone: string,
+    onDeleteContactHandler: () => void
+}
+
+function Contact({ name, email, phone, onDeleteContactHandler }: Props): JSX.Element {
+    const [showContact, setShowContact] = useState(false)
 
     return (
         <li className="contact">
@@ -16,7 +22,7 @@ function Contact({ name, email, phone, onDeleteContactHandler }) {
                     ></i>
                 </div>
                 <div className="contact-options-box">
-                    <i className="fas fa-edit"></i>
+                    <i className="far fa-edit"></i>
                     <i className="fas fa-user-times" onClick={onDeleteContactHandler}></i>
                 </div>
             </div>
@@ -31,14 +37,7 @@ function Contact({ name, email, phone, onDeleteContactHandler }) {
                     null
             }
         </li>
-    );
+    )
 }
 
-Contact.propTypes = {
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    onDeleteContactHandler: PropTypes.func.isRequired,
-    phone: PropTypes.string.isRequired,
-};
-
-export default Contact;
+export default Contact

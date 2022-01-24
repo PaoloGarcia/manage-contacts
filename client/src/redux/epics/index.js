@@ -1,15 +1,18 @@
 import { combineEpics } from "redux-observable";
 import { mergeMap, filter } from "rxjs/operators";
-
 import {
-    GET_CONTACTS, GET_CONTACTS_SUCCESS, GET_CONTACTS_FAILURE, 
-    ADD_CONTACT, ADD_CONTACT_SUCCESS, ADD_CONTACT_FAILURE,
+    GET_CONTACTS,
+    GET_CONTACTS_SUCCESS,
+    GET_CONTACTS_FAILURE,
+    ADD_CONTACT,
+    ADD_CONTACT_SUCCESS,
+    ADD_CONTACT_FAILURE,
 } from "../actions/types";
 
 function getContactsEpic(action$) {
     return action$
         .pipe(
-            filter(action => action.type === GET_CONTACTS),
+            filter((action) => action.type === GET_CONTACTS),
             mergeMap(async () => {
                 try {
                     const res = await fetch("http://localhost:5000/contacts");
