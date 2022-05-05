@@ -1,36 +1,36 @@
 .add-contact {
-    margin: 30px auto;
-    width: 500px;
+   margin: 30px auto;
+   width: 500px;
 
-    .add-contact-box {
-        border: 1px solid #999;
-        border-radius: 5px;
-        padding: 10px 20px;
-        width:100%;
+   .add-contact-box {
+      border: 1px solid #999;
+      border-radius: 5px;
+      padding: 10px 20px;
+      width: 100%;
 
-        .add-contact-body {
-            .btn-add {
-                background-color: inherit;
-                border: 1px solid #666;
-                border-radius: 5px;
-                color: #333;
-                font-weight: bold;
-                margin: 15px 0;
-                outline: none;
-                padding: 10px 20px;
-                transition: 0.3s border-color, 0.3s box-shadow, 0.3s color;
-                width: 100%;
+      .add-contact-body {
+         .btn-add {
+            background-color: inherit;
+            border: 1px solid #666;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+            margin: 15px 0;
+            outline: none;
+            padding: 10px 20px;
+            transition: 0.3s border-color, 0.3s box-shadow, 0.3s color;
+            width: 100%;
 
-                &:hover {
-                    border-color: rgb(161, 122, 23);
-                    box-shadow: 0 3px 6px #666;
-                    color: rgb(161, 122, 23);
-                }
-
-                &:active {
-                    box-shadow: 0 1px 4px #666;
-                }
+            &:hover {
+               border-color: rgb(161, 122, 23);
+               box-shadow: 0 3px 6px #666;
+               color: rgb(161, 122, 23);
             }
-        }
-    }
+
+            &:active {
+               box-shadow: 0 1px 4px #666;
+            }
+         }
+      }
+   }
 }

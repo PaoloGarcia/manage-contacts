@@ -1,43 +1,43 @@
-import { useState } from "react"
-import "./contact.scss"
+import { useState } from "react";
+import "./contact.scss";
 
-interface Props {
-    name: string,
-    email: string,
-    phone: string,
-    onDeleteContactHandler: () => void
-}
+type Props = {
+   name: string;
+   email: string;
+   phone: string;
+   onDeleteContactHandler: () => void;
+};
 
 function Contact({ name, email, phone, onDeleteContactHandler }: Props): JSX.Element {
-    const [showContact, setShowContact] = useState(false)
+   const [showContact, setShowContact] = useState(false);
 
-    return (
-        <li className="contact">
-            <div className="contact-header">
-                <div className="contact-title">
-                    {name}
-                    <i
-                        className="fas fa-sort-down"
-                        onClick={() => setShowContact(!showContact)}
-                    ></i>
-                </div>
-                <div className="contact-options-box">
-                    <i className="far fa-edit"></i>
-                    <i className="fas fa-user-times" onClick={onDeleteContactHandler}></i>
-                </div>
+   return (
+      <li className="contact">
+         <div className="contact-header">
+            <div className="contact-title">
+               {name}
+               <i
+                  className="fas fa-sort-down"
+                  onClick={() => setShowContact(!showContact)}
+               ></i>
             </div>
-            {
-                showContact ? (
-                    <div className="contact-items-box">
-                        <div className="contact-item">Email: {email}</div>
-                        <div className="contact-item">Phone: {phone}</div>
-                    </div>
-                )
-                    :
-                    null
-            }
-        </li>
-    )
+            <div className="contact-options-box">
+               <i className="far fa-edit"></i>
+               <i className="fas fa-user-times" onClick={onDeleteContactHandler}></i>
+            </div>
+         </div>
+         {
+            showContact
+               ? (
+                  <div className="contact-items-box">
+                     <div className="contact-item">Email: {email}</div>
+                     <div className="contact-item">Phone: {phone}</div>
+                  </div>
+               )
+               : null
+         }
+      </li>
+   );
 }
 
-export default Contact
+export default Contact;

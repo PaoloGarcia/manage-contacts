@@ -1,22 +1,23 @@
 .input-field {
-    margin: 10px 0;
+   margin: 10px 0;
 
-    input {
-        border: 1px solid #666;;
-        border-radius: 5px;
-        display: inline-block;
-        outline-color: rgb(161, 122, 23);
-        padding: 10px 20px;
-        width: 100%;
-    }
+   input {
+      border: 1px solid #666;
+      ;
+      border-radius: 5px;
+      display: inline-block;
+      outline-color: rgb(161, 122, 23);
+      padding: 10px 20px;
+      width: 100%;
+   }
 
-    .invalid-input {
-        border: 1px solid red;
-    }
+   .invalid-input {
+      border: 1px solid red;
+   }
 
-    .invalid {
-        color: red;
-        font-size: 13px;
-        height: 15px;
-    }
+   .invalid {
+      color: red;
+      font-size: 13px;
+      height: 15px;
+   }
 }

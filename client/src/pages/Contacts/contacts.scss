@@ -1,22 +1,22 @@
 .contacts {
-    list-style: none;
-    margin: auto;
-    padding: 0;
-    width: 500px;
+   list-style: none;
+   margin: auto;
+   padding: 0;
+   width: 500px;
 
-    .search-box {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        width: 300px;
+   .search-box {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      width: 300px;
 
-        input {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            display: inline-block;
-            outline-color: rgb(161, 122, 23);
-            padding: 5px 10px;
-            width: 100%;
-        }
-    }
+      input {
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         display: inline-block;
+         outline-color: rgb(161, 122, 23);
+         padding: 5px 10px;
+         width: 100%;
+      }
+   }
 }

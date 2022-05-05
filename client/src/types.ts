@@ -1,12 +1,12 @@
-export interface IContact {
-    id: string,
-    name: string,
-    phone: string,
-    email: string,
-}
+export type TContact = {
+   id: string;
+   name: string;
+   phone: string;
+   email: string;
+};
 
-export interface IValidationError {
-    name?: string,
-    phone?: string,
-    email?: string
-}
+export type TValidationError = {
+   name?: string;
+   phone?: string;
+   email?: string;
+};
