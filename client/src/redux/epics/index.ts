@@ -21,10 +21,10 @@ function getContactsEpic(action$: any) {
                   type: GET_CONTACTS_SUCCESS,
                   payload: contacts,
                };
-            } catch (err: any) {
+            } catch (error: unknown) {
                return {
                   type: GET_CONTACTS_FAILURE,
-                  payload: err.message,
+                  payload: (error as Error).message,
                };
             }
          })
@@ -37,23 +37,22 @@ function addContactEpic(action$: any) {
          filter((action: any) => action.type === ADD_CONTACT),
          mergeMap(async (action: any) => {
             try {
-               const res = await fetch("http://localhost:5000/contacts", {
+               const response = await fetch("http://localhost:5000/contacts", {
                   method: "POST",
                   headers: {
                      "Content-Type": "application/json"
                   },
                   body: JSON.stringify(action.payload),
                });
-               const contacts = await res.json();
-
+               const contacts = await response.json();
                return {
                   type: ADD_CONTACT_SUCCESS,
                   payload: contacts,
                };
-            } catch (err: any) {
+            } catch (error: unknown) {
                return {
                   type: ADD_CONTACT_FAILURE,
-                  payload: err.message,
+                  payload: (error as Error).message,
                };
             }
          })
