@@ -1,14 +1,15 @@
 import { useState } from "react";
-import "./contact.scss";
+
+import "./contact.css";
 
 type Props = {
    name: string;
    email: string;
    phone: string;
-   onDeleteContactHandler: () => void;
+   onDeleteContact: () => void;
 };
 
-function Contact({ name, email, phone, onDeleteContactHandler }: Props): JSX.Element {
+export function Contact({ name, email, phone, onDeleteContact }: Props) {
    const [showContact, setShowContact] = useState(false);
 
    return (
@@ -23,7 +24,7 @@ function Contact({ name, email, phone, onDeleteContactHandler }: Props): JSX.Ele
             </div>
             <div className="contact-options-box">
                <i className="far fa-edit"></i>
-               <i className="fas fa-user-times" onClick={onDeleteContactHandler}></i>
+               <i className="fas fa-user-times" onClick={onDeleteContact}></i>
             </div>
          </div>
          {
@@ -39,5 +40,3 @@ function Contact({ name, email, phone, onDeleteContactHandler }: Props): JSX.Ele
       </li>
    );
 }
-
-export default Contact;

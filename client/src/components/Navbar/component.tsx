@@ -1,11 +1,11 @@
-import "./navbar.scss";
+import "./navbar.css";
 
 type NavbarProps = {
    branding: string;
    navItems: JSX.Element[];
 };
 
-function Navbar({ branding, navItems }: NavbarProps): JSX.Element {
+export function Navbar({ branding, navItems }: NavbarProps): JSX.Element {
    return (
       <nav className="navbar">
          <div className="brand-box">{branding}</div>
@@ -13,5 +13,3 @@ function Navbar({ branding, navItems }: NavbarProps): JSX.Element {
       </nav>
    );
 }
-
-export default Navbar;

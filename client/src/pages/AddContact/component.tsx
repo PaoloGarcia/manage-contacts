@@ -1,42 +1,48 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { useHistory } from "react-router-dom"
-import { TContact, TValidationError } from "../../types";
-import Title from "../../components/Title/Title";
-import InputField from "../../components/InputField/InputField";
-import "./add-contact.scss";
 
-type AddContactProps = {
-   onAddContactHandler: (contact: TContact) => void;
+import { TContact, TValidationError } from "../../types";
+import { InputField, Title } from "../../components";
+import "./add-contact.css";
+
+type Props = {
+   onAddContact: (contact: TContact) => void;
 };
 
-function AddContact({ onAddContactHandler }: AddContactProps): JSX.Element {
-   const history = useHistory()
-   const [name, setName] = useState<string>("");
-   const [email, setEmail] = useState<string>("");
-   const [phone, setPhone] = useState<string>("");
+const initialInputs = {
+   name: "",
+   email: "",
+   phone: "",
+};
+
+export function AddContact({ onAddContact }: Props) {
+   const history = useHistory();
+   const [input, setInput] = useState(initialInputs);
    const [errors, setErrors] = useState<TValidationError>({});
+
+   const onChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
+      setInput((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+   };
 
    const onSubmitHandler = (e: FormEvent<HTMLFormElement>): void => {
       e.preventDefault();
-      if (name === "") {
+      if (input.name === "") {
          setErrors({ name: "Name field is required" });
          return;
       }
-      if (email === "") {
+      if (input.email === "") {
          setErrors({ email: "Email field is required" });
          return;
       }
-      if (phone === "") {
+      if (input.phone === "") {
          setErrors({ phone: "Phone field is required" });
          return;
       }
-      onAddContactHandler({ id: "", name, email, phone });
-      // clear fields
-      setName("");
-      setEmail("");
-      setPhone("");
+      onAddContact({ id: "", name: input.name, email: input.email, phone: input.phone });
+
+      setInput(initialInputs);
       setErrors({});
-      // redirect to home page
+
       history.push("/");
    }
 
@@ -53,32 +59,24 @@ function AddContact({ onAddContactHandler }: AddContactProps): JSX.Element {
                      type="text"
                      name="name"
                      placeholder="Full Name"
-                     value={name}
-                     onChange={
-                        (e: ChangeEvent<HTMLInputElement>): void => {
-                           setName(e.target.value)
-                        }
-                     }
+                     value={input.name}
+                     onChange={onChangeInput}
                      error={errors.name ?? ""}
                   />
                   <InputField
                      type="text"
                      name="email"
                      placeholder="Email"
-                     value={email}
-                     onChange={(e: ChangeEvent<HTMLInputElement>): void => {
-                        setEmail(e.target.value)
-                     }}
+                     value={input.email}
+                     onChange={onChangeInput}
                      error={errors.email ?? ""}
                   />
                   <InputField
                      type="text"
                      name="phone"
                      placeholder="Phone Number"
-                     value={phone}
-                     onChange={(e: ChangeEvent<HTMLInputElement>): void => {
-                        setPhone(e.target.value)
-                     }}
+                     value={input.phone}
+                     onChange={onChangeInput}
                      error={errors.phone ?? ""}
                   />
                   <button className="btn-add" type="submit">Add Contact</button>
@@ -88,5 +86,3 @@ function AddContact({ onAddContactHandler }: AddContactProps): JSX.Element {
       </div>
    );
 }
-
-export default AddContact;

@@ -1,11 +1,11 @@
-import "./title.scss";
+import "./title.css";
 
-type TitleProps = {
+type Props = {
    colored: string;
    notColored: string;
 };
 
-function Title({ colored, notColored }: TitleProps): JSX.Element {
+export function Title({ colored, notColored }: Props) {
    return (
       <h1 className="title">
          <span className="colored-side">{colored}</span>{" "}
@@ -13,5 +13,3 @@ function Title({ colored, notColored }: TitleProps): JSX.Element {
       </h1>
    );
 }
-
-export default Title;

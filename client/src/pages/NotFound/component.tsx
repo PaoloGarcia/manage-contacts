@@ -1,12 +1,10 @@
-import Title from "../Title/Title";
-import "./not-found.scss";
+import { Title } from "../../components";
+import "./not-found.css";
 
-function NotFound(): JSX.Element {
+export function NotFound() {
    return (
       <div className="not-found">
          <Title colored="404" notColored="Page Not Found" />
       </div>
    );
 }
-
-export default NotFound;

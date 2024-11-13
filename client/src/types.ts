@@ -5,8 +5,4 @@ export type TContact = {
    email: string;
 };
 
-export type TValidationError = {
-   name?: string;
-   phone?: string;
-   email?: string;
-};
+export type TValidationError = Partial<Omit<TContact, "id">>;

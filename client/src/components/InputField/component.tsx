@@ -1,7 +1,8 @@
 import { ChangeEvent } from "react";
-import "./input-field.scss";
 
-type IInputFieldProps = {
+import "./input-field.css";
+
+type Props = {
    type?: string;
    name: string;
    placeholder: string;
@@ -10,14 +11,14 @@ type IInputFieldProps = {
    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-function InputField({
+export function InputField({
    type = "text",
    name,
    placeholder,
    value,
    onChange,
    error
-}: IInputFieldProps): JSX.Element {
+}: Props) {
    return (
       <div className="input-field">
          <input
@@ -32,5 +33,3 @@ function InputField({
       </div>
    );
 }
-
-export default InputField;
